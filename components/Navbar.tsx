@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { Link } from "react-scroll";
 import { FiMenu, FiX, FiDownload } from "react-icons/fi";
+import { useState } from "react";
 
 const resume = "/assets/resume.pdf";
 
@@ -22,7 +22,7 @@ export default function Navbar() {
     <nav className="fixed top-4 left-0 w-full z-50 px-4">
       <div className="max-w-7xl mx-auto relative">
 
-        {/* Navbar */}
+        {/* Navbar container */}
         <div className="bg-[#111827]/80 backdrop-blur-xl border border-purple-500/10 rounded-full px-6 py-3 shadow-lg">
           <div className="flex items-center justify-between">
 
@@ -58,6 +58,7 @@ export default function Navbar() {
             {/* Right Side */}
             <div className="flex items-center gap-3">
 
+              {/* Resume button */}
               <a
                 href={resume}
                 target="_blank"
@@ -66,7 +67,7 @@ export default function Navbar() {
                 Resume <FiDownload />
               </a>
 
-              {/* Mobile Button */}
+              {/* Mobile menu button */}
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="md:hidden text-white text-2xl"
