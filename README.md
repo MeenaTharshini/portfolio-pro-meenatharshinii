@@ -252,7 +252,7 @@ This portfolio represents an ongoing journey rather than a finished destination.
 
 ### 📚 Academic Achievement
 
-* 🎓 **9.54 CGPA** in B.E. Computer Science & Engineering
+* 🎓 **9.15 CGPA** in B.E. Computer Science & Engineering (till 4th semester)
 * 🏅 Recognized among the **CSE academic toppers at V.S.B. Engineering College**
 
 ### 💻 Technical Growth
