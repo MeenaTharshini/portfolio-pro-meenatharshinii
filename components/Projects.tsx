@@ -39,6 +39,31 @@ const projects = [
     live: "https://trust-wipe-tau.vercel.app/",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Socket.IO", "SHA-256", "RSA"],
   },
+  
+{
+  title: "Dhanvantri AI",
+  year: "2025",
+  status: "In Progress",
+  highlight: "Safety-First AI Health & Wellness Companion",
+  desc: "An AI-powered health companion designed around responsible healthcare conversations. Features emergency symptom recognition, medication safety safeguards, non-diagnostic responses, Tamil and English support, context-aware conversations, and primary/fallback AI models. Provides Ayurveda and Siddha-inspired wellness guidance with evidence awareness while prioritizing professional medical care when necessary.",
+  icon: <FaRobot />,
+  image: "/images/dhanvantri.png",
+  github: "https://github.com/MeenaTharshini/Dhanvantri-MedicalBot",
+  live: "#",
+  tech: [
+    "Python",
+    "Flask",
+    "SQLite",
+    "Groq LLaMA",
+    "AI Safety Prompting",
+    "Bilingual AI",
+    "Emergency Recognition",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+},
+
   {
     title: "LifeLink",
     year: "2026",
@@ -51,26 +76,15 @@ const projects = [
     live: "https://life-link-blood-finder-network.onrender.com/",
     tech: ["React.js", "Express.js", "Supabase", "Node.js", "JavaScript"],
   },
-  {
-    title: "Dhanvantri Bot",
-    year: "2026",
-    status: "In Progress",
-    highlight: "Medical & Wellness Conversational Companion",
-    desc: "A health and wellness companion providing Ayurvedic and Siddha-inspired recommendations with Groq LLaMA integration and conversational healthcare assistance.",
-    icon: <FaRobot />,
-    image: "/images/dhanvantri.png",
-    github: "https://github.com/MeenaTharshini/Dhanvantri-MedicalBot",
-    live: "#",
-    tech: ["Flask", "SQLite", "Groq LLaMA", "HTML", "CSS", "JavaScript"],
-  },
+  
   {
     title: "Job Portal",
-    year: "2026",
+    year: "2025",
     status: "Live",
     highlight: "Full-Stack MERN Recruitment Platform",
     desc: "A full-stack MERN job portal featuring a recruiter dashboard, role-based authentication, job posting, and application tracking.",
     icon: <FaBriefcase />,
-    image: "/images/jobportal.png",
+    image: "/images/jobportal1.png",
     github: "https://github.com/MeenaTharshini/Advorix_Internship_Project",
     live: "https://smis-jobportal.onrender.com",
     tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
@@ -88,8 +102,8 @@ const Projects = () => {
     ) as HTMLElement | null;
 
     const scrollAmount = card
-      ? card.offsetWidth + 24
-      : 700;
+      ? card.offsetWidth + 20
+      : 340;
 
     carouselRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
@@ -100,13 +114,13 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-slate-900 text-white py-24 px-6 overflow-hidden"
+      className="min-h-screen bg-slate-900 text-white py-24 px-5 md:px-8 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
-        <div className="text-center mb-14">
-          <p className="text-purple-400 uppercase tracking-[0.3em] text-sm">
+        <div className="text-center mb-12">
+          <p className="text-purple-400 uppercase tracking-[0.3em] text-xs md:text-sm">
             What I've Built
           </p>
 
@@ -114,116 +128,117 @@ const Projects = () => {
             My <span className="text-purple-500">Projects</span>
           </h2>
 
-          <p className="text-slate-400 mt-5 max-w-2xl mx-auto leading-7">
+          <p className="text-slate-400 mt-4 max-w-2xl mx-auto text-sm leading-7">
             A showcase of my development journey, ideas transformed into
             applications, and solutions built through practical experience.
           </p>
         </div>
 
-        {/* Carousel Navigation */}
-        <div className="flex justify-end items-center gap-3 mb-7">
+        {/* Carousel Arrows */}
+        <div className="flex justify-end gap-3 mb-5">
           <button
             type="button"
             onClick={() => scrollCarousel("left")}
-            aria-label="Previous projects"
-            className="w-11 h-11 rounded-full border border-purple-500/40 bg-[#151B2E] text-purple-300 flex items-center justify-center hover:bg-purple-600 hover:text-white hover:border-purple-500 transition-all duration-300"
+            aria-label="Previous project"
+            className="w-10 h-10 rounded-full border border-purple-500/40 bg-[#151B2E] text-purple-300 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all duration-300"
           >
-            <FaChevronLeft />
+            <FaChevronLeft size={14} />
           </button>
 
           <button
             type="button"
             onClick={() => scrollCarousel("right")}
-            aria-label="Next projects"
-            className="w-11 h-11 rounded-full border border-purple-500/40 bg-[#151B2E] text-purple-300 flex items-center justify-center hover:bg-purple-600 hover:text-white hover:border-purple-500 transition-all duration-300"
+            aria-label="Next project"
+            className="w-10 h-10 rounded-full border border-purple-500/40 bg-[#151B2E] text-purple-300 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all duration-300"
           >
-            <FaChevronRight />
+            <FaChevronRight size={14} />
           </button>
         </div>
 
-        {/* Single Row Project Carousel */}
+        {/* One Row of Small Project Cards */}
         <div
           ref={carouselRef}
-          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 project-carousel"
+          className="flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 project-carousel"
         >
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className="project-card group flex-none w-[90vw] md:w-[720px] lg:w-[850px] grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-3xl bg-[#151B2E] border border-purple-500/15 hover:border-purple-500/40 transition-all duration-500 hover:shadow-[0_15px_50px_rgba(168,85,247,0.12)] snap-center"
+              className="project-card group flex-none w-[280px] sm:w-[310px] md:w-[330px] snap-start overflow-hidden rounded-2xl bg-[#151B2E] border border-purple-500/20 hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(168,85,247,0.15)]"
             >
-              {/* Project Image */}
-              <div className="relative min-h-[250px] md:min-h-[420px] overflow-hidden bg-gradient-to-br from-purple-950 via-slate-800 to-indigo-950">
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-purple-300">
-                  <div className="text-7xl opacity-50 mb-4">
-                    {project.icon}
+
+              {/* Screenshot at Top - Wide 3:1 Aspect Ratio */}
+<div className="relative w-full aspect-[3/1] overflow-hidden bg-gradient-to-br from-purple-950 via-slate-800 to-indigo-950">
+
+  {/* Background Icon */}
+  <div className="absolute inset-0 flex items-center justify-center text-purple-300 text-5xl opacity-20">
+    {project.icon}
+  </div>
+
+  {/* Project Image */}
+  <img
+    src={project.image}
+    alt={`${project.title} project screenshot`}
+    className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+  />
+
+  {/* Project Number */}
+  <span className="absolute top-2 left-2 z-10 bg-slate-950/80 text-white text-[9px] px-2 py-1 rounded-full">
+    PROJECT 0{index + 1}
+  </span>
+
+  {/* Status */}
+  <span
+    className={`absolute top-2 right-2 z-10 text-[9px] font-semibold px-2 py-1 rounded-full ${
+      project.status === "Live"
+        ? "bg-green-500/20 text-green-300"
+        : "bg-yellow-500/20 text-yellow-300"
+    }`}
+  >
+    {project.status}
+  </span>
+</div>
+
+              {/* Description at Bottom */}
+              <div className="p-4 flex flex-col">
+
+                {/* Title and Year */}
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="text-purple-400 text-lg shrink-0">
+                      {project.icon}
+                    </span>
+
+                    <h3 className="text-lg font-bold text-white truncate">
+                      {project.title}
+                    </h3>
                   </div>
 
-                  <span className="text-sm uppercase tracking-[0.25em] opacity-70">
-                    {project.title}
-                  </span>
-                </div>
-
-                <img
-                  src={project.image}
-                  alt={`${project.title} project screenshot`}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
-
-                <span className="absolute top-5 left-5 bg-slate-950/80 backdrop-blur-md text-white text-xs px-4 py-2 rounded-full border border-white/10">
-                  Project 0{index + 1}
-                </span>
-              </div>
-
-              {/* Project Details */}
-              <div className="p-6 md:p-8 lg:p-9 flex flex-col justify-center">
-
-                <div className="flex items-center gap-3 mb-5">
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs font-semibold border ${
-                      project.status === "Live"
-                        ? "bg-green-500/10 text-green-400 border-green-500/20"
-                        : "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
-                    }`}
-                  >
-                    {project.status}
-                  </span>
-
-                  <span className="text-slate-500 text-sm">
+                  <span className="text-slate-500 text-xs shrink-0">
                     {project.year}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-purple-400 text-2xl">
-                    {project.icon}
-                  </span>
-
-                  <h3 className="text-2xl md:text-3xl font-bold">
-                    {project.title}
-                  </h3>
-                </div>
-
-                <h4 className="text-purple-300 font-medium text-sm md:text-base mb-4">
+                {/* Highlight */}
+                <h4 className="text-purple-300 text-xs font-semibold mb-2 min-h-[32px]">
                   {project.highlight}
                 </h4>
 
-                <p className="text-slate-400 leading-6 text-sm mb-6">
+                {/* Description */}
+                <p className="text-slate-400 text-xs leading-5 mb-4 line-clamp-4 min-h-[80px]">
                   {project.desc}
                 </p>
 
                 {/* Technologies */}
-                <div className="mb-7">
-                  <p className="text-xs uppercase tracking-widest text-slate-500 mb-3">
+                <div className="mb-4">
+                  <p className="text-[10px] uppercase tracking-widest text-slate-500 mb-2">
                     Technologies & Tools
                   </p>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-purple-500/10 text-purple-300 px-2.5 py-1.5 rounded-lg text-xs border border-purple-500/20"
+                        className="bg-purple-500/10 text-purple-300 px-2 py-1 rounded-md text-[10px] border border-purple-500/20"
                       >
                         {tech}
                       </span>
@@ -231,17 +246,19 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Links */}
-                <div className="flex flex-wrap items-center gap-5 mt-auto">
+                {/* Project Links */}
+                <div className="flex items-center gap-4 border-t border-white/10 pt-3 mt-auto">
                   {project.github !== "#" && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition"
+                      className="inline-flex items-center gap-1.5 text-purple-400 hover:text-purple-200 transition"
                     >
-                      <FaGithub size={20} />
-                      <span className="text-sm font-medium">Source Code</span>
+                      <FaGithub size={15} />
+                      <span className="text-xs font-medium">
+                        Source Code
+                      </span>
                     </a>
                   )}
 
@@ -250,14 +267,16 @@ const Projects = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition"
+                      className="inline-flex items-center gap-1.5 text-purple-400 hover:text-purple-200 transition"
                     >
-                      <FaExternalLinkAlt size={16} />
-                      <span className="text-sm font-medium">Live Demo</span>
+                      <FaExternalLinkAlt size={12} />
+                      <span className="text-xs font-medium">
+                        Live Demo
+                      </span>
                     </a>
                   ) : (
-                    <span className="text-slate-500 text-sm">
-                      Live demo coming soon
+                    <span className="text-slate-500 text-xs">
+                      Coming Soon
                     </span>
                   )}
                 </div>
@@ -266,11 +285,10 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Scroll Indicator */}
-        <p className="text-center text-slate-500 text-xs mt-4 tracking-wider">
-          USE THE ARROWS OR SWIPE TO EXPLORE PROJECTS
+        {/* Navigation Hint */}
+        <p className="text-center text-slate-500 text-[10px] mt-3 tracking-widest">
+          USE ARROWS OR SWIPE TO EXPLORE
         </p>
-
       </div>
 
       {/* Hide Scrollbar */}
