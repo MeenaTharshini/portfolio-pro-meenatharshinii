@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -6,130 +7,112 @@ import {
   FaPhoneAlt,
   FaGithub,
   FaLinkedin,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+
 const Contact = () => {
   const links = [
-  {
-    icon: <FaEnvelope />,
-    label: "Email",
-    href: "mailto:meenatharshiniiyappan@gmail.com",
-    external: false,
-  },
-  {
-    icon: <FaPhoneAlt />,
-    label: "Call",
-    href: "tel:+916374093373",
-    external: false,
-  },
-  {
-    icon: <FaGithub />,
-    label: "GitHub",
-    href: "https://github.com/MeenaTharshini",
-    external: true,
-  },
-  {
-    icon: <FaLinkedin />,
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/meena-tharshini-i-410343301/",
-    external: true,
-  },
-  {
-    icon: <SiLeetcode />,
-    label: "LeetCode",
-    href: "https://leetcode.com/u/MeenaTharshiniI/",
-    external: true,
-  },
-];
+    {
+      icon: <FaGithub />,
+      label: "GitHub",
+      href: "https://github.com/MeenaTharshini",
+      external: true,
+    },
+    {
+      icon: <FaLinkedin />,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/meena-tharshini-i-410343301/",
+      external: true,
+    },
+    {
+      icon: <SiLeetcode />,
+      label: "LeetCode",
+      href: "https://leetcode.com/u/MeenaTharshiniI/",
+      external: true,
+    },
+    {
+      icon: <FaPhoneAlt />,
+      label: "Call",
+      href: "tel:+916374093373",
+      external: false,
+    },
+  ];
 
   return (
     <section
       id="contact"
-      className="min-h-screen bg-slate-900 text-white py-24 px-6"
+      className="bg-slate-900 text-white py-16 px-6"
     >
       <div className="max-w-5xl mx-auto">
 
-        {/* Heading */}
-        <div className="text-center mb-14">
-          <p className="text-purple-400 uppercase tracking-widest text-sm">
-            Contact
-          </p>
+        <div className="bg-[#151B2E] border border-purple-500/20 rounded-2xl p-6 md:p-10">
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-3">
-            Let’s <span className="text-purple-500">Connect</span>
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
 
-          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-            Open to internships, freelance opportunities, and software engineering roles.
-          </p>
+            {/* Left Content */}
+            <div className="max-w-md">
+              <p className="text-purple-400 uppercase tracking-[0.2em] text-xs font-semibold">
+                Get in Touch
+              </p>
+
+              <h2 className="text-3xl md:text-4xl font-bold mt-3">
+                Let's <span className="text-purple-400">Connect.</span>
+              </h2>
+
+              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+                Have an idea, opportunity, or project in mind?
+                I'd love to connect and explore possibilities.
+              </p>
+
+              <a
+                href="mailto:meenatharshiniiyappan@gmail.com"
+                className="inline-flex items-center gap-2 mt-5 px-5 py-2.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-sm font-medium transition-all duration-300"
+              >
+                <FaEnvelope />
+                Send an Email
+                <FaExternalLinkAlt className="text-xs" />
+              </a>
+            </div>
+
+            {/* Right Contact Links */}
+            <div className="flex flex-col gap-3 w-full md:max-w-[250px]">
+              {links.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  aria-label={item.label}
+                  className="group flex items-center justify-between px-4 py-3 rounded-xl bg-slate-800/70 border border-slate-700 hover:border-purple-500/50 hover:bg-purple-500/10 transition-all duration-300"
+                >
+                  <span className="flex items-center gap-3 text-slate-300 group-hover:text-white text-sm font-medium">
+                    <span className="text-purple-400 text-lg">
+                      {item.icon}
+                    </span>
+                    {item.label}
+                  </span>
+
+                  {item.external && (
+                    <FaExternalLinkAlt className="text-xs text-slate-500 group-hover:text-purple-400 transition" />
+                  )}
+                </a>
+              ))}
+            </div>
+
+          </div>
+
+          {/* Footer */}
+          <div className="border-t border-slate-700/70 mt-8 pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-500">
+            <p>
+              © {new Date().getFullYear()} Meena Tharshini. All rights reserved.
+            </p>
+            <p className="tracking-widest uppercase">
+              Designed & Built with Purpose
+            </p>
+          </div>
+
         </div>
-
-        {/* Contact Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-  {links.map((item, index) => (
-    <a
-      key={index}
-      href={item.href}
-      target={item.external ? "_blank" : undefined}
-      rel={item.external ? "noreferrer" : undefined}
-      aria-label={item.label}
-      className="
-        group
-        min-h-[160px]
-        bg-[#151B2E]
-        border border-purple-500/10
-        rounded-2xl
-        flex flex-col
-        items-center
-        justify-center
-        gap-4
-        transition-all
-        duration-300
-        hover:-translate-y-2
-        hover:border-purple-500/50
-        hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]
-      "
-    >
-      {/* Icon */}
-      <div
-        className="
-          w-14
-          h-14
-          rounded-full
-          bg-purple-500/10
-          flex
-          items-center
-          justify-center
-          text-3xl
-          text-purple-400
-          transition-all
-          duration-300
-          group-hover:bg-purple-500
-          group-hover:text-white
-          group-hover:scale-110
-        "
-      >
-        {item.icon}
-      </div>
-
-      {/* Label */}
-      <span className="text-base font-semibold text-slate-300 group-hover:text-white transition">
-        {item.label}
-      </span>
-    </a>
-  ))}
-</div>
-
-        {/* Contact Info */}
-        <div className="mt-14 text-center text-slate-400 text-sm space-y-2">
-          <p className="hover:text-purple-400 transition">
-             meenatharshiniiyappan@gmail.com
-          </p>
-          <p className="hover:text-purple-400 transition">
-             +91 63740 93373
-          </p>
-        </div>
-
       </div>
     </section>
   );
