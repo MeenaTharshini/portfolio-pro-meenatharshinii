@@ -58,7 +58,7 @@ const achievements: Achievement[] = [
       "Achieved an Elite Gold certification with a score of 95%, placing in the Top 5% in the NPTEL course.",
     category: "NPTEL Certification",
     icon: FaJava,
-    highlight: "95% • Elite Gold",
+    highlight: "95% • Elite Gold • Top 5%",
     number: "04",
   },
   {
@@ -67,7 +67,7 @@ const achievements: Achievement[] = [
       "Successfully completed the NPTEL certification, gaining knowledge of cybersecurity principles and privacy protection.",
     category: "NPTEL Certification",
     icon: FaShieldAlt,
-    highlight: "79% Score",
+    highlight: "79% • Elite Silver",
     number: "05",
   },
   {
