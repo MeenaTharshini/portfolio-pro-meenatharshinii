@@ -52,7 +52,7 @@ const achievements: Achievement[] = [
     title: "Programming in Java – NPTEL",
     description:
       "Achieved Elite Gold certification with a score of 95%, placing in the Top 5%.",
-    category: "Academic",
+    category: "Certification",
     icon: FaJava,
     highlight: "95% • Elite Gold",
   },
@@ -72,14 +72,16 @@ const achievements: Achievement[] = [
     icon: FaCertificate,
     highlight: "Python • Java • Azure",
   },
-  {
-    title: "Hack Synapse 2026 – Team Lead",
-    description:
-      "Led Team SMIS during Hack Synapse 2026, working on Trust Wipe as a team-based technology project.",
-    category: "Leadership",
-    icon: FaUsers,
-    highlight: "Team SMIS",
-  },
+  
+{
+  title: "Hackathon Leadership & Finalist Achievements",
+  description:
+    "Led Team SMIS across multiple competitive hackathons, coordinating team efforts, contributing to project development, and driving solutions through different evaluation stages. At Hack Synapse 2026, the team was selected among the Top 10 teams. At DeepSprint Innovest 3.0, the team advanced to the final round after clearing two evaluation rounds. At HackWithAmypo, the team qualified for the final round after progressing through multiple preliminary stages.",
+  category: "Leadership & Hackathons",
+  icon: FaUsers,
+  highlight: "3 Hackathons • Team Lead",
+},
+
 ];
 
 export default function Achievements() {
