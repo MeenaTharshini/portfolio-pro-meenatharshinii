@@ -16,7 +16,7 @@ export default function About() {
       "Working with React, Node.js, MongoDB, Flask, REST APIs, and AI integrations.",
 
     growth:
-      "Solved 168+ LeetCode problems while strengthening DSA and software engineering fundamentals.",
+      "Solved 240+ LeetCode problems while strengthening DSA and software engineering fundamentals.",
 
     goal:
       "Focused on building scalable products and growing as a software engineer through continuous learning.",
@@ -103,7 +103,7 @@ export default function About() {
           </div>
 
           <div className="bg-[#151B2E] p-5 rounded-2xl border border-purple-500/10">
-            <h3 className="text-3xl font-bold text-purple-400">168+</h3>
+            <h3 className="text-3xl font-bold text-purple-400">240+</h3>
             <p className="text-slate-400 text-sm mt-2">LeetCode Solved</p>
           </div>
 

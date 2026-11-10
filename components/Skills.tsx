@@ -1,104 +1,269 @@
+
 "use client";
 
-import React from "react";
+import { motion } from "framer-motion";
+import type { ReactNode } from "react";
+
 import {
+  FaCode,
   FaLaptopCode,
   FaServer,
-  FaCode,
   FaDatabase,
+  FaTools,
+  FaLayerGroup,
+  FaGithub,
+  FaPython,
+  FaJava,
+  FaReact,
+  FaNodeJs,
+  FaPaintBrush,
 } from "react-icons/fa";
 
-const skills = [
+import {
+  SiCplusplus,
+  SiJavascript,
+  SiHtml5,
+  SiTailwindcss,
+  SiVite,
+  SiExpress,
+  SiFlask,
+  SiDjango,
+  SiMongodb,
+  SiMysql,
+  SiPostgresql,
+  SiSqlite,
+  SiSupabase,
+  SiPostman,
+  SiFigma,
+  SiVercel,
+  SiRender,
+  SiNetlify,
+  SiGit,
+} from "react-icons/si";
+
+type AccentColor =
+  | "blue"
+  | "purple"
+  | "cyan"
+  | "green"
+  | "amber"
+  | "pink";
+
+interface SkillItem {
+  name: string;
+  icon?: ReactNode;
+}
+
+interface SkillCategory {
+  title: string;
+  subtitle: string;
+  icon: ReactNode;
+  skills: SkillItem[];
+  accent: AccentColor;
+}
+
+const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend",
-    icon: <FaLaptopCode />,
-    items: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "Vite"],
-  },
-  {
-    title: "Backend",
-    icon: <FaServer />,
-    items: ["Node.js", "Express.js", "Flask", "REST APIs"],
-  },
-  {
-    title: "Languages",
+    title: "Programming Languages",
+    subtitle: "Writing logic and solving problems",
     icon: <FaCode />,
-    items: ["Python", "Java", "C++", "C"],
+    accent: "blue",
+    skills: [
+      { name: "Python", icon: <FaPython /> },
+      { name: "Java", icon: <FaJava /> },
+      { name: "C++", icon: <SiCplusplus /> },
+      { name: "C" },
+      { name: "JavaScript", icon: <SiJavascript /> },
+    ],
+  },
+  {
+    title: "Frontend Development",
+    subtitle: "Building responsive user interfaces",
+    icon: <FaLaptopCode />,
+    accent: "purple",
+    skills: [
+      { name: "HTML5", icon: <SiHtml5 /> },
+      { name: "CSS3", icon: <FaPaintBrush /> },
+      { name: "JavaScript", icon: <SiJavascript /> },
+      { name: "React.js", icon: <FaReact /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+      { name: "Vite", icon: <SiVite /> },
+    ],
+  },
+  {
+    title: "Backend Development",
+    subtitle: "Building APIs and application logic",
+    icon: <FaServer />,
+    accent: "cyan",
+    skills: [
+      { name: "Node.js", icon: <FaNodeJs /> },
+      { name: "Express.js", icon: <SiExpress /> },
+      { name: "Python Flask", icon: <SiFlask /> },
+      { name: "Django", icon: <SiDjango /> },
+      { name: "REST APIs" },
+      { name: "Groq LLM API" },
+    ],
+  },
+  {
+    title: "Databases",
+    subtitle: "Data storage and management",
+    icon: <FaDatabase />,
+    accent: "green",
+    skills: [
+      { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
+      { name: "Neon PostgreSQL" },
+      { name: "SQLite", icon: <SiSqlite /> },
+      { name: "Supabase", icon: <SiSupabase /> },
+    ],
+  },
+  {
+    title: "Core Computer Science",
+    subtitle: "Fundamentals behind software engineering",
+    icon: <FaLayerGroup />,
+    accent: "amber",
+    skills: [
+      { name: "Data Structures & Algorithms" },
+      { name: "Object-Oriented Programming" },
+      { name: "DBMS" },
+      { name: "Operating Systems" },
+      { name: "Computer Networks" },
+    ],
   },
   {
     title: "Tools & Platforms",
-    icon: <FaDatabase />,
-    items: [
-      "MongoDB",
-      "MySQL",
-      "Git",
-      "GitHub",
-      "Figma",
-      "Vercel",
-      "Render",
-      "Netlify",
-      "Groq LLM API",
+    subtitle: "Development, collaboration and deployment",
+    icon: <FaTools />,
+    accent: "pink",
+    skills: [
+      { name: "Git", icon: <SiGit /> },
+      { name: "GitHub", icon: <FaGithub /> },
+      { name: "VS Code", icon: <FaCode /> },
+      { name: "Postman", icon: <SiPostman /> },
+      { name: "Figma", icon: <SiFigma /> },
+      { name: "Vercel", icon: <SiVercel /> },
+      { name: "Render", icon: <SiRender /> },
+      { name: "Netlify", icon: <SiNetlify /> },
     ],
   },
 ];
+
+const accentStyles: Record<AccentColor, string> = {
+  blue: "text-blue-400 bg-blue-400/10 border-blue-400/20",
+  purple: "text-purple-400 bg-purple-400/10 border-purple-400/20",
+  cyan: "text-cyan-400 bg-cyan-400/10 border-cyan-400/20",
+  green: "text-green-400 bg-green-400/10 border-green-400/20",
+  amber: "text-amber-400 bg-amber-400/10 border-amber-400/20",
+  pink: "text-pink-400 bg-pink-400/10 border-pink-400/20",
+};
 
 export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen bg-slate-900 text-white py-24 px-6"
+      className="relative isolate overflow-hidden bg-[#080d1c] px-5 py-24 text-white md:px-8"
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Background decoration */}
+      <div className="pointer-events-none absolute -left-40 top-20 -z-10 h-80 w-80 rounded-full bg-purple-600/10 blur-[100px]" />
 
-        {/* Heading */}
-        <div className="text-center mb-20">
-          <p className="text-purple-400 uppercase tracking-widest text-sm">
-            Technical Skills
+      <div className="pointer-events-none absolute -right-40 bottom-10 -z-10 h-80 w-80 rounded-full bg-blue-600/10 blur-[100px]" />
+
+      <div className="mx-auto max-w-7xl">
+        {/* Section heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
+        >
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-purple-400">
+            What I Work With
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-3">
-            My <span className="text-purple-500">Skills</span>
+          <h2 className="text-4xl font-extrabold tracking-tight md:text-5xl">
+            Technical <span className="text-purple-400">Skills</span>
           </h2>
 
-          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-            Technologies and tools I use for web development,
-            problem solving, and software projects.
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-400 md:text-base">
+            A collection of programming languages, frameworks, databases and
+            tools I use to develop applications, solve problems and bring
+            ideas to life.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="bg-[#151B2E] border border-purple-500/10 rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)]"
+        {/* Skills grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {skillCategories.map((category, index) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 0.5,
+                delay: (index % 3) * 0.1,
+              }}
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#111a2e]/90 p-7 shadow-lg shadow-black/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40 hover:shadow-[0_12px_35px_rgba(168,85,247,0.12)]"
             >
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-2xl mb-5">
-                {skill.icon}
+              {/* Decorative glow */}
+              <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-purple-500/5 blur-3xl transition-all duration-300 group-hover:bg-purple-500/15" />
+
+              {/* Category header */}
+              <div className="relative mb-7 flex items-center gap-4">
+                <div
+                  className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border text-2xl ${accentStyles[category.accent]}`}
+                >
+                  {category.icon}
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold text-white">
+                    {category.title}
+                  </h3>
+
+                  <p className="mt-1 text-xs leading-5 text-slate-500">
+                    {category.subtitle}
+                  </p>
+                </div>
               </div>
 
-              {/* Title */}
-              <h3 className="text-xl font-semibold mb-5">
-                {skill.title}
-              </h3>
-
-              {/* Items */}
-              <div className="flex flex-wrap gap-2">
-                {skill.items.map((item) => (
+              {/* Individual skills */}
+              <div className="relative flex flex-wrap gap-2.5">
+                {category.skills.map((skill) => (
                   <span
-                    key={item}
-                    className="px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm"
+                    key={skill.name}
+                    className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-medium text-slate-300 transition-all duration-300 hover:border-purple-400/30 hover:bg-purple-500/10 hover:text-purple-200"
                   >
-                    {item}
+                    {skill.icon && (
+                      <span className="text-sm text-purple-400">
+                        {skill.icon}
+                      </span>
+                    )}
+                    {skill.name}
                   </span>
                 ))}
               </div>
 
-            </div>
+              {/* Bottom hover accent */}
+              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-500 group-hover:w-full" />
+            </motion.div>
           ))}
-
         </div>
+
+        {/* Closing statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-sm font-medium tracking-wide text-slate-500">
+            Always learning. Always building. Always improving.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

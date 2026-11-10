@@ -7,6 +7,7 @@ import {
   FaCode,
   FaLightbulb,
   FaJava,
+  FaShieldAlt,
 } from "react-icons/fa";
 
 const achievements = [
@@ -21,18 +22,23 @@ const achievements = [
     icon: <FaAward />,
   },
   {
-    title: "168+ LeetCode Problems",
-    desc: "Solved 168+ coding challenges with strong problem-solving skills.",
+    title: "240+ LeetCode Problems",
+    desc: "Solved 240+ coding challenges with strong problem-solving skills.",
     icon: <FaCode />,
   },
   {
-    title: "NPTEL Java - 95%",
-    desc: "Achieved outstanding performance in Programming in Java course.",
+    title: "NPTEL : Programming in Java - 95%",
+    desc: "Achieved outstanding performance with Elite Gold (Top 5%) in Programming in Java course.",
     icon: <FaJava />,
   },
   {
+  title: "NPTEL : Cybersecurity and Privacy - 79%",
+  desc: "Successfully completed the NPTEL certification in Cybersecurity and Privacy, gaining knowledge of cybersecurity principles and privacy protection.",
+  icon: <FaShieldAlt />,
+},
+  {
     title: "Infosys Certifications",
-    desc: "Completed Python and Java Foundation and multiple technical certifications.",
+    desc: "Completed Python and Java Foundation and multiple technical certifications including Microsoft Azure Cloud Computing.",
     icon: <FaCode />,
   },
   {

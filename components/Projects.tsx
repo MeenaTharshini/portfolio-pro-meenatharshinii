@@ -7,9 +7,32 @@ import {
   FaTint,
   FaGithub,
   FaExternalLinkAlt,
+  FaGraduationCap,
 } from "react-icons/fa";
 
 const projects = [
+  {
+    title: "EVOLV",
+    status: "Live",
+    year: "2026",
+    highlight: "Gamified Interactive Python Learning Platform",
+    desc:
+      "A gamified Python learning platform designed to make programming education structured, interactive, and engaging. EVOLV addresses passive learning and inconsistent practice through a 60-topic progressive learning pathway. Each topic follows a four-stage journey — Video, Concept, Hands-on Coding, and Quiz — supported by an integrated code execution environment, assessments, XP rewards, badges, daily streaks, and learning progress tracking.",
+    icon: <FaGraduationCap />,
+    github: "https://github.com/MeenaTharshini/Evolv_X",
+    live: "https://evolv-x-three.vercel.app/#/dashboard",
+    tech: [
+      "Python",
+      "React.js",
+      "Vite",
+      "Supabase",
+      "Code Execution",
+      "Quizzes",
+      "Gamification",
+      "Progress Tracking",
+    ],
+  },
+
   {
     title: "Trust Wipe",
     status: "Live",
