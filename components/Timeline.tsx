@@ -131,7 +131,7 @@ const timelineData: TimelineItem[] = [
     title: "Programming in Java – 95%",
     organization: "NPTEL",
     description:
-      "Successfully completed the NPTEL Programming in Java course with a score of 95%, strengthening Java and object-oriented programming concepts.",
+      "Successfully completed the NPTEL Programming in Java course with a score of 95% (top 5%) Elite + Gold, strengthening Java and object-oriented programming concepts.",
     icon: <FaCertificate />,
     tags: ["Java", "OOP"],
     color: "purple",
@@ -139,10 +139,10 @@ const timelineData: TimelineItem[] = [
   {
     period: "2026",
     category: "CERTIFICATION",
-    title: "Cybersecurity and Privacy",
+    title: "Cybersecurity and Privacy - 79%",
     organization: "NPTEL",
     description:
-      "Completed the NPTEL certification in Cybersecurity and Privacy.",
+      "Completed the NPTEL certification in Cybersecurity and Privacy, with Elite + Silver, gaining knowledge of cybersecurity principles and privacy protection..",
     icon: <FaShieldAlt />,
     tags: ["Cybersecurity", "Privacy"],
     color: "green",

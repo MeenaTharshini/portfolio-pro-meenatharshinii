@@ -1,50 +1,84 @@
+
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaTrophy,
   FaAward,
   FaCode,
-  FaLightbulb,
   FaJava,
   FaShieldAlt,
+  FaBriefcase,
+  FaUsers,
+  FaCertificate,
 } from "react-icons/fa";
+import type { IconType } from "react-icons";
 
-const achievements = [
+interface Achievement {
+  title: string;
+  description: string;
+  category: string;
+  icon: IconType;
+  highlight?: string;
+}
+
+const achievements: Achievement[] = [
   {
     title: "Best Performer Intern",
-    desc: "Recognized for outstanding performance and contribution at Advorix Technologies.",
-    icon: <FaTrophy />,
+    description:
+      "Recognized for outstanding performance and contributions during the internship at Advorix Technologies.",
+    category: "Professional",
+    icon: FaTrophy,
+    highlight: "Recognition",
   },
   {
     title: "Infosys Virtual Internship 7.0",
-    desc: "Selected for a 6-month internship program under Infosys Springboard.",
-    icon: <FaAward />,
+    description:
+      "Selected for the Infosys Springboard virtual internship program, gaining exposure to industry-oriented learning.",
+    category: "Internship",
+    icon: FaBriefcase,
+    highlight: "Infosys",
   },
   {
     title: "240+ LeetCode Problems",
-    desc: "Solved 240+ coding challenges with strong problem-solving skills.",
-    icon: <FaCode />,
+    description:
+      "Practiced data structures, algorithms and problem-solving through consistent coding challenges.",
+    category: "Problem Solving",
+    icon: FaCode,
+    highlight: "240+",
   },
   {
-    title: "NPTEL : Programming in Java - 95%",
-    desc: "Achieved outstanding performance with Elite Gold (Top 5%) in Programming in Java course.",
-    icon: <FaJava />,
+    title: "Programming in Java – NPTEL",
+    description:
+      "Achieved Elite Gold certification with a score of 95%, placing in the Top 5%.",
+    category: "Academic",
+    icon: FaJava,
+    highlight: "95% • Elite Gold",
   },
   {
-  title: "NPTEL : Cybersecurity and Privacy - 79%",
-  desc: "Successfully completed the NPTEL certification in Cybersecurity and Privacy, gaining knowledge of cybersecurity principles and privacy protection.",
-  icon: <FaShieldAlt />,
-},
-  {
-    title: "Infosys Certifications",
-    desc: "Completed Python and Java Foundation and multiple technical certifications including Microsoft Azure Cloud Computing.",
-    icon: <FaCode />,
+    title: "Cybersecurity and Privacy – NPTEL",
+    description:
+      "Completed the NPTEL certification, developing knowledge of cybersecurity principles and privacy protection.",
+    category: "Certification",
+    icon: FaShieldAlt,
+    highlight: "79%",
   },
   {
-    title: "Hackathon Participation",
-    desc: "Participated in Smart India Hackathon selection and problem-solving events.",
-    icon: <FaLightbulb />,
+    title: "Technical Certifications",
+    description:
+      "Completed Python and Java Foundation certifications and technical learning programs, including Microsoft Azure Cloud Computing.",
+    category: "Technical",
+    icon: FaCertificate,
+    highlight: "Python • Java • Azure",
+  },
+  {
+    title: "Hack Synapse 2026 – Team Lead",
+    description:
+      "Led Team SMIS during Hack Synapse 2026, working on Trust Wipe as a team-based technology project.",
+    category: "Leadership",
+    icon: FaUsers,
+    highlight: "Team SMIS",
   },
 ];
 
@@ -52,52 +86,84 @@ export default function Achievements() {
   return (
     <section
       id="achievements"
-      className="min-h-screen bg-slate-900 text-white py-24 px-6"
+      className="relative min-h-screen overflow-hidden bg-slate-950 px-6 py-24 text-white"
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Background decoration */}
+      <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-purple-600/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 bottom-20 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl" />
 
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <p className="text-purple-400 uppercase tracking-widest text-sm">
-            Accomplishments
+      <div className="relative mx-auto max-w-7xl">
+        {/* Section heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
+        >
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-purple-400">
+            Milestones & Recognition
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-3">
-            My <span className="text-purple-500">Achievements</span>
+          <h2 className="text-4xl font-bold md:text-5xl">
+            My <span className="text-purple-400">Achievements</span>
           </h2>
 
-          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-            Academic, technical, and professional milestones that define my journey.
+          <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">
+            A collection of academic milestones, technical accomplishments,
+            professional experiences and leadership contributions.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Achievement cards */}
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          {achievements.map((item, index) => {
+            const Icon = item.icon;
 
-          {achievements.map((item, index) => (
-            <div
-              key={index}
-              className="bg-[#151B2E] border border-purple-500/10 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)]"
-            >
+            return (
+              <motion.article
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.5,
+                  delay: (index % 3) * 0.1,
+                }}
+                whileHover={{ y: -7 }}
+                className="group flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/80 p-7 transition-colors duration-300 hover:border-purple-500/50 hover:bg-slate-900"
+              >
+                {/* Icon and category */}
+                <div className="mb-6 flex items-center justify-between">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-purple-500/20 bg-purple-500/10 text-2xl text-purple-400 transition-transform duration-300 group-hover:scale-110">
+                    <Icon aria-hidden="true" />
+                  </div>
 
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-2xl mb-6 transition-transform duration-300 hover:scale-110">
-                {item.icon}
-              </div>
+                  <span className="rounded-full border border-slate-700 px-3 py-1 text-xs font-medium text-slate-400">
+                    {item.category}
+                  </span>
+                </div>
 
-              {/* Title */}
-              <h3 className="text-xl font-semibold mb-3">
-                {item.title}
-              </h3>
+                {/* Achievement details */}
+                <h3 className="mb-3 text-xl font-semibold leading-snug text-white transition-colors group-hover:text-purple-300">
+                  {item.title}
+                </h3>
 
-              {/* Description */}
-              <p className="text-slate-400 leading-7">
-                {item.desc}
-              </p>
+                <p className="flex-grow text-sm leading-7 text-slate-400">
+                  {item.description}
+                </p>
 
-            </div>
-          ))}
-
+                {/* Highlight */}
+                {item.highlight && (
+                  <div className="mt-6 border-t border-slate-800 pt-5">
+                    <span className="text-sm font-semibold tracking-wide text-purple-400">
+                      {item.highlight}
+                    </span>
+                  </div>
+                )}
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>
