@@ -1,8 +1,8 @@
+
 import React from "react";
 import {
   FaRobot,
   FaBriefcase,
-  FaFileAlt,
   FaShieldAlt,
   FaTint,
   FaGithub,
@@ -13,95 +13,63 @@ import {
 const projects = [
   {
     title: "EVOLV",
-    status: "Live",
     year: "2026",
+    status: "Live",
     highlight: "Gamified Interactive Python Learning Platform",
-    desc:
-      "A gamified Python learning platform designed to make programming education structured, interactive, and engaging. EVOLV addresses passive learning and inconsistent practice through a 60-topic progressive learning pathway. Each topic follows a four-stage journey — Video, Concept, Hands-on Coding, and Quiz — supported by an integrated code execution environment, assessments, XP rewards, badges, daily streaks, and learning progress tracking.",
+    desc: "A gamified Python learning platform designed to make programming education structured, interactive, and engaging. EVOLV addresses passive learning and inconsistent practice through a 60-topic progressive learning pathway. Each topic follows a four-stage journey — Video, Concept, Hands-on Coding, and Quiz — supported by an integrated code execution environment, assessments, XP rewards, badges, daily streaks, and learning progress tracking.",
     icon: <FaGraduationCap />,
+    image: "/images/evolv.png",
     github: "https://github.com/MeenaTharshini/Evolv_X",
     live: "https://evolv-x-three.vercel.app/#/dashboard",
-    tech: [
-      "Python",
-      "React.js",
-      "Vite",
-      "Supabase",
-      "Code Execution",
-      "Quizzes",
-      "Gamification",
-      "Progress Tracking",
-    ],
+    tech: ["Python", "React.js", "Vite", "Supabase", "Code Execution", "Quizzes", "Gamification", "Progress Tracking"],
   },
-
   {
     title: "Trust Wipe",
-    status: "Live",
     year: "2026",
-    desc: "Secure data sanitization and verification platform with JWT authentication, SHA-256 evidence hashing, RSA certificate signing, QR-based verification, and Socket.IO real-time monitoring.",
+    status: "Live",
+    highlight: "Secure Data Sanitization & Verification",
+    desc: "A secure data sanitization and verification platform featuring JWT authentication, SHA-256 evidence hashing, RSA certificate signing, QR-based verification, and Socket.IO real-time monitoring.",
     icon: <FaShieldAlt />,
+    image: "/images/trustwipe.png",
     github: "https://github.com/MeenaTharshini/Trust_Wipe",
     live: "https://trust-wipe-tau.vercel.app/",
-    tech: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JWT",
-      "Socket.IO",
-      "SHA-256",
-      "RSA",
-    ],
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Socket.IO", "SHA-256", "RSA"],
   },
-
   {
     title: "LifeLink",
-    status: "Live",
     year: "2026",
-    desc: "Blood donor management platform with authentication, blood request management, location-based donor discovery, and real-time donor matching using Supabase.",
+    status: "Live",
+    highlight: "Blood Donor Management & Discovery Platform",
+    desc: "A blood donor management platform with authentication, blood request management, location-based donor discovery, and donor matching using Supabase.",
     icon: <FaTint />,
+    image: "/images/lifelink.png",
     github: "https://github.com/MeenaTharshini/Life-Link",
     live: "https://life-link-blood-finder-network.onrender.com/",
-    tech: [
-      "React.js",
-      "Express.js",
-      "Supabase",
-      "Node.js",
-      "JavaScript",
-    ],
+    tech: ["React.js", "Express.js", "Supabase", "Node.js", "JavaScript"],
   },
-
   {
     title: "Dhanvantri Bot",
-    status: "In Progress",
     year: "2026",
-    desc: "AI-powered health and wellness companion providing Ayurvedic and Siddha-inspired recommendations with Groq LLaMA integration and conversational healthcare assistance.",
+    status: "In Progress",
+    highlight: "Medical & Wellness Conversational Companion",
+    desc: "A health and wellness companion providing Ayurvedic and Siddha-inspired recommendations with Groq LLaMA integration and conversational healthcare assistance.",
     icon: <FaRobot />,
+    image: "/images/dhanvantri.png",
     github: "https://github.com/MeenaTharshini/Dhanvantri-MedicalBot",
     live: "#",
-    tech: [
-      "Flask",
-      "SQLite",
-      "Groq LLaMA",
-      "HTML",
-      "CSS",
-      "JavaScript",
-    ],
+    tech: ["Flask", "SQLite", "Groq LLaMA", "HTML", "CSS", "JavaScript"],
   },
-
   {
     title: "Job Portal",
-    status: "Live",
     year: "2026",
-    desc: "Full-stack MERN job portal featuring recruiter dashboard, role-based authentication, job posting, and application tracking.",
+    status: "Live",
+    highlight: "Full-Stack MERN Recruitment Platform",
+    desc: "A full-stack MERN job portal featuring a recruiter dashboard, role-based authentication, job posting, and application tracking.",
     icon: <FaBriefcase />,
+    image: "/images/jobportal.png",
     github: "https://github.com/MeenaTharshini/Advorix_Internship_Project",
     live: "https://smis-jobportal.onrender.com",
-    tech: [
-      "MongoDB",
-      "Express.js",
-      "React.js",
-      "Node.js",
-    ],
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
   },
 ];
 
@@ -114,146 +82,153 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
-        <div className="text-center mb-16">
-          <p className="text-purple-400 uppercase tracking-widest text-sm">
-            Implementation
+        <div className="text-center mb-20">
+          <p className="text-purple-400 uppercase tracking-[0.3em] text-sm">
+            What I've Built
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-3">
+          <h2 className="text-4xl md:text-5xl font-bold mt-4">
             My <span className="text-purple-500">Projects</span>
           </h2>
 
-          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-            Projects showcasing full-stack development, AI integration,
-            and software engineering practices.
+          <p className="text-slate-400 mt-5 max-w-2xl mx-auto leading-7">
+            A showcase of my development journey, ideas transformed into
+            applications, and solutions built through practical experience.
           </p>
         </div>
 
-        {/* Project Cards */}
-        <div className="grid sm:grid-cols-2 gap-8">
-
+        {/* Project Showcase */}
+        <div className="space-y-16">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="
-                h-full
-                bg-[#151B2E]
-                border border-purple-500/10
-                rounded-3xl
-                p-8
-                flex flex-col
-                transition-all duration-300
-                hover:-translate-y-2
-                hover:border-purple-500/40
-                hover:shadow-[0_0_25px_rgba(168,85,247,0.15)]
-              "
+            <article
+              key={project.title}
+              className="group grid grid-cols-1 lg:grid-cols-2 overflow-hidden rounded-3xl bg-[#151B2E] border border-purple-500/15 hover:border-purple-500/40 transition-all duration-500 hover:shadow-[0_15px_50px_rgba(168,85,247,0.12)]"
             >
 
-              {/* Icon */}
+              {/* Project Image */}
               <div
-                className="
-                  w-14 h-14
-                  rounded-2xl
-                  bg-purple-500/10
-                  flex items-center justify-center
-                  text-purple-400 text-2xl
-                  mb-6
-                "
+                className={`relative min-h-[260px] md:min-h-[380px] overflow-hidden bg-gradient-to-br from-purple-950 via-slate-800 to-indigo-950 ${
+                  index % 2 !== 0 ? "lg:order-2" : ""
+                }`}
               >
-                {project.icon}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-purple-300">
+                  <div className="text-7xl opacity-50 mb-4">
+                    {project.icon}
+                  </div>
+                  <span className="text-sm uppercase tracking-[0.25em] opacity-70">
+                    {project.title}
+                  </span>
+                </div>
+
+                <img
+                  src={project.image}
+                  alt={`${project.title} project screenshot`}
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+
+                <span className="absolute top-5 left-5 bg-slate-950/80 backdrop-blur-md text-white text-xs px-4 py-2 rounded-full border border-white/10">
+                  Project 0{index + 1}
+                </span>
               </div>
 
-              {/* Title */}
-              <h3 className="text-xl font-semibold text-white">
-                {project.title}
-              </h3>
-
-              {/* Status */}
-              <div className="flex items-center gap-3 mt-3 mb-5">
-                <span
-                  className={`
-                    px-3 py-1 rounded-full text-xs font-medium border
-                    ${
+              {/* Project Details */}
+              <div
+                className={`p-7 md:p-10 lg:p-12 flex flex-col justify-center ${
+                  index % 2 !== 0 ? "lg:order-1" : ""
+                }`}
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <span
+                    className={`px-3 py-1 rounded-full text-xs font-semibold border ${
                       project.status === "Live"
                         ? "bg-green-500/10 text-green-400 border-green-500/20"
-                        : project.status === "Completed"
-                        ? "bg-blue-500/10 text-blue-400 border-blue-500/20"
                         : "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
-                    }
-                  `}
-                >
-                  {project.status}
-                </span>
-
-                <span className="text-slate-500 text-sm">
-                  {project.year}
-                </span>
-              </div>
-
-              {/* Description */}
-              <p className="text-slate-400 leading-7 mb-6 flex-grow">
-                {project.desc}
-              </p>
-
-              {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="
-                      bg-purple-500/10
-                      text-purple-300
-                      px-3 py-1
-                      rounded-full
-                      text-sm
-                      border border-purple-500/20
-                    "
+                    }`}
                   >
-                    {tech}
+                    {project.status}
                   </span>
-                ))}
-              </div>
 
-              {/* Links */}
-              <div className="flex items-center gap-5 mt-auto">
+                  <span className="text-slate-500 text-sm">
+                    {project.year}
+                  </span>
+                </div>
 
-                {project.github !== "#" && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-purple-400 hover:text-purple-300 transition"
-                    title="GitHub Repository"
-                  >
-                    <FaGithub size={22} />
-                  </a>
-                )}
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-purple-400 text-2xl">
+                    {project.icon}
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-bold">
+                    {project.title}
+                  </h3>
+                </div>
 
-                {project.live !== "#" && (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-purple-400 hover:text-purple-300 transition"
-                    title="Live Demo"
-                  >
-                    <FaExternalLinkAlt size={20} />
-                  </a>
-                )}
+                <h4 className="text-purple-300 font-medium text-sm md:text-base mb-5">
+                  {project.highlight}
+                </h4>
 
-                {project.github === "#" &&
-                  project.live === "#" && (
+                <p className="text-slate-400 leading-7 text-sm md:text-base mb-7">
+                  {project.desc}
+                </p>
+
+                {/* Technologies */}
+                <div className="mb-8">
+                  <p className="text-xs uppercase tracking-widest text-slate-500 mb-3">
+                    Technologies & Tools
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="bg-purple-500/10 text-purple-300 px-3 py-1.5 rounded-lg text-xs border border-purple-500/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Links */}
+                <div className="flex items-center gap-5 mt-auto">
+                  {project.github !== "#" && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition"
+                    >
+                      <FaGithub size={20} />
+                      <span className="text-sm font-medium">Source Code</span>
+                    </a>
+                  )}
+
+                  {project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition"
+                    >
+                      <FaExternalLinkAlt size={16} />
+                      <span className="text-sm font-medium">Live Demo</span>
+                    </a>
+                  )}
+
+                  {project.live === "#" && (
                     <span className="text-slate-500 text-sm">
-                      Coming Soon
+                      Live demo coming soon
                     </span>
                   )}
+                </div>
               </div>
-
-            </div>
+            </article>
           ))}
-
         </div>
-
       </div>
     </section>
   );
