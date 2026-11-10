@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaArrowRight } from "react-icons/fa";
 
-const minu = "/assets/minu.jpeg";
+const minu = "/assets/minu.png";
 const resume = "/assets/resume.pdf";
 
 export default function Hero() {
